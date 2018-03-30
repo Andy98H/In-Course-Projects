@@ -1,2 +1,3 @@
 # In-Course-Projects
-Graphing Problem 
+
+Projects encapsulate fundamental programming principles and standards such as code documentation, use of different data structures and algorithms, standard testing and more.
