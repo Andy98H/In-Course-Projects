@@ -1,0 +1,29 @@
+
+3.1
+
+A directional graph can be used to solve this problem where the cities are represented by the nodes and the route
+between cities are represented by the edges. The route from one city to another is unidirectional therefore a directed graph
+would suffice. Using BFS and DFS, we can solve for some path that exists between Boston and Minneapolis by performing 
+the DFS and BFS on the source node representing Boston and outputting a path to the Minneapolis node.
+
+3.2
+
+When comparing the results of the two searching algorithms used, the BFS algorithm found a path using fewer stops, precisely
+5 city stops omitting Boston from the count. The DFS search found the result using 7 stops, adding St. Louis and Kansas city to the route.
+
+If the number of stops increases then the number of cities in the graph increases but this will not necessarily change the result obtained from the DFS and BFS. the edgeTo
+array gives the most recent edge to a given vertex. Since our adjacency list remains the same, the most recent edge will remain the same if nothing is modified in the
+current edges of the digraph, only new stops are added. Therefore, our DFS and BFS search will give us the same result given that new stops are added but the current routes
+between cities is not modified.
+
+3.4
+
+The time complexity of the shortest path problem is ElogV where E is the number of edges and V is the number of vertices. This is due to the use of 
+a binary heap in the implementation of Dijkstra's algorithm. Since each vertex is relaxed, it would take logV time to search and update in the min heap.
+Each vertex is attached to (V-1) vertices at most, therefore combining these two facts, we get an overall time complexity of ElogV
+
+If the number of cities increases, the number of vertices and edges increase. The time complexity remains ElogV given the new vertices and edges.
+If the number of stops increases, then the number of weighted edges increases, since these represent the meal prices at each stop.
+If the number of restaurants increases, then the time complexity would remain the same since they are only used to set the edge weights in the beginning.
+
+

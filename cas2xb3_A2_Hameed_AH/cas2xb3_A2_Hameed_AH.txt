@@ -1,0 +1,8 @@
+SFWR ENG 2XB3
+Andy Hameed
+400073469
+The work being submitted is my own individual work - 2018-03-31
+
+I used several libraries from the Algorithms 4th Edition textbook by Sedgewick as templates for my implementation and
+modified them as necessary. I included the loading and reading of data in the constructors for the generation files
+for consistency across modules, simplicity and readability.
