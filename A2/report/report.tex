@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{listings}
+\usepackage{booktabs}
+
+\oddsidemargin 0mm
+\evensidemargin 0mm
+\textwidth 160mm
+\textheight 200mm
+
+\pagestyle {plain}
+\pagenumbering{arabic}
+
+\newcounter{stepnum}
+
+\title{Assignment 2 Report}
+\author{Andy Hameed | 400073469}
+\date{\today}
+
+\begin {document}
+
+\maketitle
+
+The ambiguity of the specifications in assignment 1 caused for multiple interpretations of module access routines and services. In assignment 2, students were given a formal specification in the format of an MIS. This clarified the functional purpose of each access routine and provided an overall better description of the software. However, the implementation was still left in the hands of the programmer and gave flexibility for different solutions to a given specification.
+
+\section{Testing of the Original Program}
+
+26 tests were used to cover every method in the listed modules, CurveADT, SeqServices and Data. Simple access methods were tested by creating an object and asserting the inputted parameters reflected the get methods that were used in the modules. For more complex methods, ones like linear and quadratic interpolation, I used an online interpolation tool and compared that value to the one obtained by each method, using a small tolerance for float comparison inaccuracy in python.
+
+\section{Results of Testing Partner's Code}
+
+When testing my partner's code, 25/26 tests passed with only 1 failure due to syntax formatting for exceptions. The full exception specified in the MIS for when Data storage is full, was referenced as FULL by my partner which did not correspond to my reference of the method as "Full" in the exceptions, a small and harmless derivation.
+
+\section{Discussion of Test Results}
+As expected, the formal specifications eliminated misinterpretations of methods and demonstrated the congruency between two versions of a software application despite individual implementation differences. 
+
+\subsection{Problems with Original Code}
+Original code covered could have been more efficient in terms of implementation to enhance performance. The load function, for example, read the input file several times instead of reading it once and storing its values in data types. 
+
+\subsection{Problems with Partner's Code}
+Besides naming differences that caused one test, my partner's code passed all but the aforementioned test and seemed correct altogether.
+
+\subsection{Problems with Assignment Specification}
+
+\section{Answers}
+
+\begin{enumerate}
+
+\item What is the mathematical specification of the \texttt{SeqServices} access
+  program isInBounds(X, x) if the assumption that X is ascending is removed?
+
+The new specification for isInBounds can show that there exists some number less than x  and some number greater than x:
+
+$\exists\,(i,j| X_i \leq x \leq X_j)$
+  
+
+\item How would you modify \texttt{CurveADT.py} to support cubic interpolation?
+
+I would began by changing the MAX\_ORDER variable invariant to equal 3 in order to handle cubic interpolation. I would then edit the interp local function to include cubic interpolation which would be implemented in the SeqServices module along with interpLin and interpQuad.
+
+\item What is your critique of the CurveADT module's interface.  In particular,
+  comment on whether the exported access programs provide an interface that is
+  consistent, essential, general, minimal and opaque.
+
+The CurveADT module interface could be improved with better specifications for edge cases. The complication is abstracted for the purposes of the assignment but would be useful for completing the specifications for the interface.
+
+The interface is not minimal since the eval method implements linear and quadratic interpolation which could be classified as two separate services. It also not essential since we know that the second derivative can be evaluated by taking the first derivative of a given input twice: $dfdx(dfdx(x)) \equiv d2fdx2(x)$. The interface is opaque since it incorporates information hiding and allows the programmer to abstract details such as how a given input is evaluated or it's derivative is calculated and so on. It is also consistent since it uses exception handling and consistent naming conventions such as x to specify some x-value.
+
+\item What is your critique of the Data abstract object's interface.  In
+  particular, comment on whether the exported access programs provide an
+  interface that is consistent, essential, general, minimal and opaque.
+
+To complement the add method in the Data module, adding a delete method would improve generality of the interface and allow users to use the data in a multitude of other ways. Since there is no size method in the Data interface, exception handling cannot be implemented in advance and must be addressed during a call to the add method. 
+
+The Data interface is not minimal for the same reason being that eval is a method that holds two services, linear and quadratic interpolation. However, the interface is essential since no method could be obtained through a combination of the other methods. The interface is opaque since it applies information hiding, allowing the user to use methods without worrying about how they're implemented. Lastly, the interface is consistent since it uses naming conventions such as i to indicate index, x for x value and other variables in a consistent manner along with proper exception handling for select methods. 
+
+\end{enumerate}
+
+\newpage
+
+\lstset{language=Python, basicstyle=\tiny, breaklines=true, showspaces=false,
+  showstringspaces=false, breakatwhitespace=true}
+
+\def\thesection{\Alph{section}}
+
+\section{Code for CurveADT.py}
+
+\noindent \lstinputlisting{../src/CurveADT.py}
+
+\newpage
+
+\section{Code for Data.py}
+
+\noindent \lstinputlisting{../src/Data.py}
+
+\newpage
+
+\section{Code for SeqServices.py}
+
+\noindent \lstinputlisting{../src/SeqServices.py}
+
+\newpage
+
+\section{Code for Plot.py}
+
+\noindent \lstinputlisting{../src/Plot.py}
+
+\newpage
+
+\section{Code for Load.py}
+
+\noindent \lstinputlisting{../src/Load.py}
+
+\newpage
+
+\section{Code for Partner's CurveADT.py}
+
+\noindent \lstinputlisting{../partner/CurveADT.py}
+
+\newpage
+
+\section{Code for Partner's Data.py}
+
+\noindent \lstinputlisting{../partner/Data.py}
+
+\newpage
+
+\section{Code for Partner's SeqServices.py}
+
+
+\noindent \lstinputlisting{../partner/SeqServices.py}
+
+\newpage
+
+\section{Makefile}
+
+\lstset{language=make}
+\noindent \lstinputlisting{../Makefile}
+
+\end {document}
