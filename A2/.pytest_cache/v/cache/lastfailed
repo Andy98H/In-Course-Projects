@@ -1,9 +1,0 @@
-{
-  "src/test_All.py::TestCurveADT::()": true, 
-  "src/test_All.py::TestCurveADT::()::test_add_MaxExc": true, 
-  "src/test_All.py::TestCurveADT::()::test_add_Notascending": true, 
-  "src/test_All.py::TestCurveADT::()::test_data_eval_OOF": true, 
-  "src/test_All.py::TestCurveADT::()::test_getC": true, 
-  "src/test_All.py::TestCurveADT::()::test_isInBounds": true, 
-  "src/test_All.py::TestMethods::()": true
-}
