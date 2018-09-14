@@ -1,0 +1,104 @@
+\hypertarget{class_free_cell}{}\section{Free\+Cell Class Reference}
+\label{class_free_cell}\index{Free\+Cell@{Free\+Cell}}
+
+
+Class representing the free cells in a \hyperlink{class_free_cell}{Free\+Cell} game.  
+
+
+
+
+{\ttfamily \#include $<$Free\+Cell.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_free_cell_a4bba4f4932ee5ae1043aef8485116798}{Free\+Cell} ()\hypertarget{class_free_cell_a4bba4f4932ee5ae1043aef8485116798}{}\label{class_free_cell_a4bba4f4932ee5ae1043aef8485116798}
+
+\begin{DoxyCompactList}\small\item\em constructor for \hyperlink{class_free_cell}{Free\+Cell} \end{DoxyCompactList}\item 
+bool \hyperlink{class_free_cell_a96ff5f730b35c963e80a960352914147}{is\+Full} ()
+\begin{DoxyCompactList}\small\item\em returns true if full, otehrwise false \end{DoxyCompactList}\item 
+\hyperlink{class_card}{Card} \hyperlink{class_free_cell_af341fc1f3bdfc9edb7337879f12f45e6}{search\+Card} (\hyperlink{_card_a_d_t_8h_adf74d53cd68bbef55ba510b266ecbbed}{Rank} rank, \hyperlink{_card_a_d_t_8h_af78e1c8ea5e6837b6ab9452a1e435e4e}{Suit} suit)
+\begin{DoxyCompactList}\small\item\em search for the card with the matching suit and rank \end{DoxyCompactList}\item 
+void \hyperlink{class_free_cell_a31d2d73e75d6ca47531ab861e433ad03}{add\+Card} (\hyperlink{class_card}{Card} c)
+\begin{DoxyCompactList}\small\item\em move card back to tableau or foundation \end{DoxyCompactList}\item 
+void \hyperlink{class_free_cell_a8d41f669bf01f5c862121a4ff7d70ed8}{remove\+Card} (\hyperlink{_card_a_d_t_8h_adf74d53cd68bbef55ba510b266ecbbed}{Rank} rank, \hyperlink{_card_a_d_t_8h_af78e1c8ea5e6837b6ab9452a1e435e4e}{Suit} suit)
+\begin{DoxyCompactList}\small\item\em remove card from free cells \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing the free cells in a \hyperlink{class_free_cell}{Free\+Cell} game. 
+
+\subsection{Member Function Documentation}
+\index{Free\+Cell@{Free\+Cell}!add\+Card@{add\+Card}}
+\index{add\+Card@{add\+Card}!Free\+Cell@{Free\+Cell}}
+\subsubsection[{\texorpdfstring{add\+Card(\+Card c)}{addCard(Card c)}}]{\setlength{\rightskip}{0pt plus 5cm}void Free\+Cell\+::add\+Card (
+\begin{DoxyParamCaption}
+\item[{{\bf Card}}]{c}
+\end{DoxyParamCaption}
+)}\hypertarget{class_free_cell_a31d2d73e75d6ca47531ab861e433ad03}{}\label{class_free_cell_a31d2d73e75d6ca47531ab861e433ad03}
+
+
+move card back to tableau or foundation 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & card being added to free cells pile \\
+\hline
+\end{DoxyParams}
+\index{Free\+Cell@{Free\+Cell}!is\+Full@{is\+Full}}
+\index{is\+Full@{is\+Full}!Free\+Cell@{Free\+Cell}}
+\subsubsection[{\texorpdfstring{is\+Full()}{isFull()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Free\+Cell\+::is\+Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_free_cell_a96ff5f730b35c963e80a960352914147}{}\label{class_free_cell_a96ff5f730b35c963e80a960352914147}
+
+
+returns true if full, otehrwise false 
+
+\begin{DoxyReturn}{Returns}
+true if all four cells are taken 
+\end{DoxyReturn}
+\index{Free\+Cell@{Free\+Cell}!remove\+Card@{remove\+Card}}
+\index{remove\+Card@{remove\+Card}!Free\+Cell@{Free\+Cell}}
+\subsubsection[{\texorpdfstring{remove\+Card(\+Rank rank, Suit suit)}{removeCard(Rank rank, Suit suit)}}]{\setlength{\rightskip}{0pt plus 5cm}void Free\+Cell\+::remove\+Card (
+\begin{DoxyParamCaption}
+\item[{{\bf Rank}}]{rank, }
+\item[{{\bf Suit}}]{suit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_free_cell_a8d41f669bf01f5c862121a4ff7d70ed8}{}\label{class_free_cell_a8d41f669bf01f5c862121a4ff7d70ed8}
+
+
+remove card from free cells 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & rank of card being moved \\
+\hline
+{\em suit} & suit of card being moved \\
+\hline
+\end{DoxyParams}
+\index{Free\+Cell@{Free\+Cell}!search\+Card@{search\+Card}}
+\index{search\+Card@{search\+Card}!Free\+Cell@{Free\+Cell}}
+\subsubsection[{\texorpdfstring{search\+Card(\+Rank rank, Suit suit)}{searchCard(Rank rank, Suit suit)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Card} Free\+Cell\+::search\+Card (
+\begin{DoxyParamCaption}
+\item[{{\bf Rank}}]{rank, }
+\item[{{\bf Suit}}]{suit}
+\end{DoxyParamCaption}
+)}\hypertarget{class_free_cell_af341fc1f3bdfc9edb7337879f12f45e6}{}\label{class_free_cell_af341fc1f3bdfc9edb7337879f12f45e6}
+
+
+search for the card with the matching suit and rank 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rank} & rank of card being moved \\
+\hline
+{\em suit} & suit of card being moved \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{_free_cell_8h}{Free\+Cell.\+h}\end{DoxyCompactItemize}
